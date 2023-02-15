@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Paragrafo 
+        em <strong>destaque</strong> da Página
+    </p>
+
+    <h1 class="comum">Titulo comum </h1>
+    <h1 id="principal">Titulo principal</h1>
+
+    Pessoa: <input type="text" name="nome">
+
+    <hr>
+
+    <script>
+        var tituloPorClasse = document.getElementsByClassName('comum')[0];
+        console.log(tituloPorClasse);
+        
+        var tituloPorId = document.getElementById('principal');
+        console.log(tituloPorId);
+
+        var inputNome = document.getElementsByName('nome')[0];
+        console.log(inputNome);
+
+        // let titulo = document.getElementsByTagName('p')[0];
+        // let textoDoTituloInnerHtml = titulo.innerHTML;
+        // let textoDoTituloComText = titulo.innerText;
+        // let textoDoTituloComTextContent = titulo.textContent;
+
+        // console.log(textoDoTituloInnerHtml);        
+        // console.log(textoDoTituloComTextContent);
+
+        // console.log(textoDoTituloComText);
+
+        // console.log(window.document.body);
+        
+        // let body = window.document.body;
+        // body.style.backgroundColor = 'black';
+        // body.style.color = 'white';
+
+    </script>
+</body>
+</html>

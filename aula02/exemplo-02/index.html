@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Paragrafo inicial</p>
+
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sequi velit quis totam doloribus, blanditiis voluptatum saepe qui fuga cumque iusto incidunt ipsam vel dolore alias impedit, quos assumenda repellendus.</p>
+    </div>
+
+    <ul class="itens">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <!-- <li>Item 4</li> -->
+    </ul>
+
+    <script>
+        // Declaracoes
+        // Manipulacao
+        // Functions
+
+        var paragrafo = document.querySelector('.container p');
+        var itens = document.querySelectorAll('.itens li');
+
+        // console.log(paragrafo);
+
+        for (const item of itens) {
+            // console.log(item.innerText);
+        }      
+        
+        var item4 = document.createElement('li');
+        // item4.innerText = 'outro valor em <b> destaque </b>';
+        
+        var texto = document.createTextNode('Item 4 CRIADO dinamicamente');
+
+        item4.appendChild(texto);
+
+        console.log(item4);
+
+        var ul = document.querySelector('.itens');
+        ul.appendChild(item4);
+
+        var ul = document.querySelector('.itens');
+        ul.appendChild(item4);
+
+    </script>
+</body>
+</html>

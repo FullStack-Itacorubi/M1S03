@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adicionar pessoa</h1>
+    Valor 1: <input type="number" id="valor1"><br>
+    Valor 2: <input type="number" id="valor2"> <br>
+    
+    <button onclick="somar()">+</button>
+
+    <div class="resultado">
+      <span>Resultado</span>
+    </div>
+    
+    <script>
+      console.log(valor1, valor2);
+
+      function somar() {
+        var inputValor1 = document.querySelector('#valor1');
+        var inputValor2 = document.querySelector('#valor2');
+
+        const valor1 = Number(inputValor1.value);
+        const valor2 = parseInt(inputValor2.value);
+
+        const resultado = valor1 + valor2;
+
+        // const resultado = Number(inputValor1.value) + Number(inputValor2.value);
+        console.log(resultado);
+
+      }
+      
+    </script>
+</body>
+</html>

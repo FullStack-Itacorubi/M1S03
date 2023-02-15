@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="contato.html">Contato</a>
+    <h1>Adicionar pessoa</h1>
+    Nome: <input type="text" name="nome"> 
+    
+    <button onclick="adicionarPessoa()">adicionar</button>
+
+    <h1>Listar pessoas</h1>
+    <!-- <div class="container">
+      <ul class="pessoas">
+        <li class="pessoa">João</li>
+        <li class="pessoa">Joaquim</li>
+        <li class="pessoa">Maria</li>
+        <li class="pessoa">Fernanda</li>
+      </ul>
+    </div> -->
+
+    <script src="index.js"></script>
+
+    <script>
+      function redirecionar() {
+        const url = window.location.href;
+        const nextURL = url + '/contato.html';
+        const nextTitle = 'My new page title';
+        const nextState = { additionalInformation: 'Updated the URL with JS' };
+        window.history.pushState(nextState, nextTitle, nextURL);
+
+      }
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>titulo</h1>
+        <p>paragrafo</p>
+        <ul class="itens">
+            <li>Item 1</li>
+            <li id="item-2">Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </div>
+
+    <script>
+        var container = document.querySelector('.container');
+        var itens = document.querySelectorAll('.itens li');
+        
+        var outroItem = document.createElement('li');       
+        var texto = document.createTextNode('outro item CRIADO dinamicamente');
+        outroItem.appendChild(texto);
+
+        // console.log(outroItem);
+
+        // insertBefore
+        // nó pai, elemento criado, elemento de referencia
+        var ulItens = document.getElementsByClassName('itens')[0];
+       // console.log(ulItens);
+        ulItens.insertBefore(outroItem, itens[4]);
+
+
+        // console.log(container);
+        // console.log(container.childNodes);
+
+        console.log(document.getElementById('item-2').parentNode);
+        console.log(document.getElementById('item-2').parentNode.parentNode);
+    </script>
+</body>
+</html>
