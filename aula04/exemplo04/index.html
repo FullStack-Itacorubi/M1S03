@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/button.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="informe-card">
+        Informe o tempo desejado:
+        <input id="numero" class="numero" name="numero" type="number" />
+        <button onclick="configurar()" class="btn btn-info">configurar</button>
+      </div>
+
+      <div class="contador-card">
+        <span id="numero-contador">0</span>
+      </div>
+
+      <div class="acoes-card">
+        <button onclick="iniciar()" class="btn btn-success">iniciar</button>
+        <button onclick="parar()" class="btn btn-danger">parar</button>
+      </div>
+
+      <div class="mensagem-status"></div>
+    </div>
+
+    <script>
+      var contador = 0;
+
+      var inputNumero = document.getElementById("numero");
+      var spanNumeroContador = document.getElementById("numero-contador");
+      var mensagemStatus =
+        document.getElementsByClassName("mensagem-status")[0];
+
+      var intervalo;
+
+      function configurar() {
+        spanNumeroContador.innerText = inputNumero.value
+          ? inputNumero.value
+          : 0;
+        contador = inputNumero.value;
+      }
+
+      function iniciar() {
+        if (contador) {
+        mostrarMensage('Contagem foi iniciada!');
+          intervalo = setInterval(function () {
+            contador--;
+            spanNumeroContador.innerText = contador;
+
+            if (contador == 0) {
+              clearInterval(intervalo);
+            }
+          }, 1000);
+        }
+      }
+
+      function parar() {
+        mostrarMensage('Contagem parou!')
+        clearInterval(intervalo);
+      }
+
+      function mostrarMensage(mensagem) {
+        var paragrafo = document.createElement('p');
+        paragrafo.classList = 'status';
+
+        var texto = document.createTextNode(mensagem);
+        paragrafo.appendChild(texto);
+
+        mensagemStatus.appendChild(paragrafo);
+        setTimeout(function() {
+            mensagemStatus.removeChild(paragrafo);
+        }, 1000)
+      }
+    </script>
+  </body>
+</html>

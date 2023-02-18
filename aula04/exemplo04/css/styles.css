@@ -1,0 +1,46 @@
+body {
+    font-size: 1.5em;
+    padding: 20px;
+    background-color: #98766a;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contador-card {    
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 20px;
+    width: 180px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contador-card span {
+    font-size: 6em;
+    width: 100%;
+}
+
+.acoes-card {
+    display: flex;
+    justify-content: center;
+}
+
+.acoes-card button {
+    margin: 10px 30px;
+}
+
+.informe-card {
+    margin-bottom: 20px;
+}
+
+.status {
+    text-align: center;
+}
+
+
+input[type="number"] {
+  font: 0.8rem 'Roboto', sans-serif;
+  box-sizing: border-box;
+  width: 200px;
+  padding: 0.5rem 0.75rem;
+}

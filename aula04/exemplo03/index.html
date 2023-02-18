@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Desafio 02</h1>
+
+    <div class="container">
+        <h2>Contador: 
+            <span id="valor">0</span>
+        </h2>
+        <button id="btn-incremento">Incrementar sozinho</button>
+    </div>
+    
+    <script>
+//         Construa um contador 
+// Faça incremente o valor +1 a cada intervalo informado.
+// opcional: após o número definido destrua o intervalo 
+// e imprima uma mensagem
+
+    var contador = 0;
+
+    var btnIncremento = document.querySelector('#btn-incremento');
+    btnIncremento.addEventListener('click', incrementar);
+
+    function incrementar() {
+        var intervalo = setInterval(function() {
+            contador++;
+            console.log('Valor contador: ', contador);
+            atualizarValorNaTela();
+            trocaDeCor();
+
+            if (contador == 6) {
+                clearInterval(intervalo); 
+            }
+        }, 1000);
+    } 
+
+    function atualizarValorNaTela() {
+        var spanValor = document.querySelector('#valor');
+        spanValor.innerText = contador;
+    }
+
+    function trocaDeCor() {
+        var cores = ['aqua', 'blue', 'black', 'blueviolet', 'brown', 'green'];
+        var corSorteada = Math.floor(Math.random() * cores.length) + 1;
+        
+        var body = document.getElementsByTagName('body')[0];
+        body.style.backgroundColor = cores[corSorteada];
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Desafio 01</h1>
+
+    <div class="container">
+      <button onclick="mostrarTexto()">Mostrar texto</button>
+      <button onclick="desistirMostrar()">Não quero mais mostrar</button>
+
+      <p class="texto"></p>
+    </div>
+
+    <script>
+      //         Construa um site com  um botão que, ao ser clicado, mostre um texto na tela após 3 segundos.
+      // opcional: e após 5 segundos a informação deve desaparecer da tela.
+
+      var delayDeTempo;
+      var container = document.querySelector(".container");
+      var paragrafo;
+
+      function mostrarTexto() {
+        console.log(delayDeTempo);
+        delayDeTempo = setTimeout(function () {
+          // código será executado depois de 3 segundos
+          // paragrafo = document.createElement("p");
+          paragrafo = document.getElementsByClassName("texto")[0];
+          texto = document.createTextNode("Texto");
+          paragrafo.appendChild(texto);
+          container.appendChild(paragrafo);
+          removerTextoDaTela();
+        }, 3000);
+      }
+
+      function removerTextoDaTela() {
+        setTimeout(function () {
+          // remover da tela
+          // elemento que quero apagar
+          // elemento nó pai (parent)
+          // container.removeChild(paragrafo);
+          paragrafo.removeChild(texto)
+        }, 1000);
+      }
+
+      function desistirMostrar() {
+        clearTimeout(delayDeTempo);
+      }
+    </script>
+  </body>
+</html>
